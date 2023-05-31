@@ -1,58 +1,9 @@
-import java.util.ArrayList;
-import java.util.List;
+import controller.Geometry;
 
 public class Teste {
-    public ArrayList<Quadrilatero> listaDeQuadrilateros = new ArrayList<>(5);
-    public ArrayList<Circulo> listaDeCirculos = new ArrayList<>();
-
-    void criarRetangulo(float lado, float altura) {
-
-        if(listaDeQuadrilateros.size() >= 5) {
-            throw new IndexOutOfBoundsException("Limite atigindo");
-        } else if (lado <= 0 || altura <= 0) {
-            throw new ArithmeticException("O valor não podem ser igual ou menor que 0");
-        }else {
-            Retangulo retangulo = new Retangulo();
-            retangulo.setLado(lado);
-            retangulo.setAltura(altura);
-            listaDeQuadrilateros.add(retangulo);
-        }
-
-    }
-
-    void criarQuadrado(float lado) {
-
-        if(listaDeQuadrilateros.size() >= 5) {
-            throw new IndexOutOfBoundsException("Limite atigindo");
-        } else if (lado <= 0) {
-            throw new ArithmeticException("O valor não podem ser igual ou menor que 0");
-        }else {
-            Quadrado quadrado = new Quadrado();
-            quadrado.setLado(lado);
-            listaDeQuadrilateros.add(quadrado);
-        }
-
-    }
-
-    void criarCirculo(float raio) {
-        
-            Circulo circulo = new Circulo();
-
-            if (raio <= 0) {
-                throw new ArithmeticException("O valor não podem ser igual ou menor que 0");
-            } else {
-                if(listaDeQuadrilateros.size() >= 5) {
-                    throw new IndexOutOfBoundsException("Limite atigindo");
-                } else {
-                    circulo.setRaio(raio);
-                    listaDeQuadrilateros.add(circulo);   
-                }
-                listaDeCirculos.add(circulo);  
-            }
-    }
-
     public static void main(String[] args) {
-       Teste teste = new Teste();
+
+       Geometry teste = new Geometry();
 
        teste.criarRetangulo(7,3);
        teste.criarRetangulo(3,4);
@@ -68,7 +19,5 @@ public class Teste {
        
        teste.listaDeCirculos.get(0).calcularArea();
        teste.listaDeCirculos.get(0).calcularPerimetro();
-
-
     }
 }
